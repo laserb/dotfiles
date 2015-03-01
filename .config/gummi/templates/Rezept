@@ -1,0 +1,61 @@
+\ifx\compilation\undefined
+\documentclass[9pt,a4paper]{scrartcl}
+\usepackage{FreudigerRezept}
+% set topic
+\topic{\leftmark}
+% author
+\author{R. Freudiger}
+%no page nr
+%\pagenr{}
+%\solution
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\setcounter{page}{1}
+
+
+
+\begin{document}
+\fi
+\titlelevel{Title}
+\subtitlelevel{}
+
+%%%%%% Bild %%%%%%
+%\Bildpfad{}
+
+
+%%%%% Nährwerte %%%%%%%
+%\Energie{0}
+%\Fett{0}
+%\Kohlenhydrate{0}
+%\Eiweiss{0}
+%\NaehrwerteZusatz{0}
+
+
+%%%%% Informationen %%%%%%%
+%\Vorbereitungszeit{0}
+%\Kochzeit{0}
+%\Kuehlzeit{0}
+%\Personenzahl{4}
+%\Zusatzinformation{}
+
+\makehead
+
+% Zutaten
+\Zutaten{
+}
+%
+% Anleitung
+\Anleitung{
+\begin{enumerate}
+\item 
+\end{enumerate}
+}
+\\
+
+\Weiteres{Weiteres}{Backen usw.}
+
+\Quelle{}
+
+\ifx\compilation\undefined
+\end{document}
+\fi

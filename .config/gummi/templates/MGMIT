@@ -1,22 +1,22 @@
-\ifx\FullLayout\undefined
+\gdef\FullLayout{}
 \documentclass[9pt,a4paper]{frartcl}
 \usepackage{FreudigerTools}
-\usepackage{FreudigerTikZFigure}
+%\usepackage{FreudigerTikZFigure}
 % set topic
-\topic{\leftmark}
+\topic{MGMIT}
 % author
-\author{R. Freudiger}
+\author{R. Freudiger (freudrap)}
 %no page nr
 %\pagenr{}
 %\solution
 
 \begin{document}
-\fi
+\titlelevel[Übungsblatt]{Title  \hfill \today}
+\subtitlelevel{}
 
 \begin{aufgaben}
 
 \end{aufgaben}
 
-\ifx\FullLayout\undefined
 \end{document}
-\fi
+
