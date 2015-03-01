@@ -1,0 +1,20 @@
+\gdef\FullLayout{}
+\gdef\compilation{}
+\documentclass[9pt,a4paper]{frartcl}
+\usepackage{FreudigerTools}
+\usepackage{FreudigerTikZFigure}
+% set topic
+\topic{\leftmark}
+% author
+\author{R. Freudiger}
+%no page nr
+%\pagenr{}
+%\solution
+%\setcounter{section}{0}
+%\setcounter{subsection}{0}
+%\setcounter{page}{0}
+
+\begin{document}
+% include only files in subdirectories and without whitespaces!
+\subincludefrom{subdir}{texfile}
+\end{document}

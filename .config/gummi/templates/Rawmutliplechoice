@@ -1,0 +1,19 @@
+\ifx\FullLayout\undefined
+\documentclass[9pt,a4paper]{frartcl}
+\usepackage{FreudigerTools}
+\usepackage{FreudigerTikZFigure}
+% set topic
+\topic{\leftmark}
+% author
+\author{R. Freudiger}
+%no page nr
+%\pagenr{}
+%\solution
+
+\begin{document}
+\fi
+
+
+\ifx\FullLayout\undefined
+\end{document}
+\fi

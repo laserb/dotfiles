@@ -1,0 +1,22 @@
+\ifx\compilation\undefined
+\gdef\FullLayout{}
+\documentclass[9pt,a4paper]{frartcl}
+\usepackage{FreudigerTools}
+\usepackage{FreudigerTikZFigure}
+% set topic
+\topic{Topic}
+% set author
+\author{R. Freudiger}
+%no page nr
+%\pagenr{}
+
+\begin{document}
+\fi
+\titlelevel[Theorie]{Title}
+\subtitlelevel{}
+
+\section{}
+
+\ifx\compilation\undefined
+\end{document}
+\fi

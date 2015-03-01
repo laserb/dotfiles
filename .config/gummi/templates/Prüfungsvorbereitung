@@ -1,0 +1,42 @@
+\gdef\FullLayout{}
+\gdef\compilation{}
+\documentclass[9pt,a4paper]{frartcl}
+\usepackage{FreudigerTools}
+\usepackage{FreudigerTikZFigure}
+\usepackage{FreudigerPrüfungsvorbereitung}
+% set topic
+\topic{Topic}
+% set author
+\author{R. Freudiger}
+%no page nr
+%\pagenr{}
+
+\begin{document}
+\titlelevel{Title}
+\subtitlelevel{}
+
+\begin{eqlist:}
+\buch{}
+
+\mitn{}
+
+\ziele{
+\begin{itemize}
+\item first
+\end{itemize}
+}
+
+\formeln{}
+
+\groessen
+\emptylines
+\begin{mygroessen}
+\item{first}{second}
+\end{mygroessen}
+
+\uebung{}
+\textbf{Aufgaben im Buch:}\\
+\textbf{Aufgaben im Internet:} \\
+\end{eqlist:}
+\end{document}
+

@@ -1,0 +1,24 @@
+\gdef\FullLayout{}
+\gdef\compilation{}
+\documentclass[9pt,a4paper]{frexam}
+\usepackage{FreudigerTools}
+\usepackage{FreudigerTikZFigure}
+% set topic
+\topic{Topic}
+% set author
+\author{R. Freudiger}
+%no page nr
+%\pagenr{}
+
+\begin{document}
+
+\maketitlepage{Title \hfill date}{Subtitle}{Formulas}
+
+
+\begin{multichoice}
+\item
+\end{multichoice}
+\newpage
+
+
+\end{document}
