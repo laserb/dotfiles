@@ -1,0 +1,23 @@
+\documentclass[a4paper,11pt]{dinbrief}
+\usepackage[german]{babel}
+\usepackage{eqlist}
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+\begin{document}
+\subject{\textbf{Betreff}}
+\backaddress{Freudiger Raphael, Luegislandstr. 169, 8051 Zürich}
+\signature{Freudiger Raphael}
+\Datum{Zürich, \today}
+\address{Freudiger Raphael \\ Luegislandstr. 169 \\ 8051 Zürich}
+\begin{letter}
+   {Empfänger\\
+   Adresse}
+   % Dies ist EIN Befehl: \begin{letter}{Adresse}
+\opening{Sehr geehrte Damen und Herren,}
+
+
+\closing{Mit freundlichen Grüßen}
+\encl{Anhang}
+\end{letter}
+\end{document}
+   
