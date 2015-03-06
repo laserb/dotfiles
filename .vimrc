@@ -17,6 +17,12 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>h
 nnoremap <c-h> <c-w>l
 
+" copy paste mappings
+vmap <C-c> "+yi
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <C-r><C-o>+
+
 set list lcs=tab:\┆\ 
 let g:indentLine_color_term = 236
 let g:indentLine_char = '┆'
