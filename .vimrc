@@ -12,6 +12,9 @@ set number
 color torte
 set background=dark
 
+" do not conceal in latex
+let g:tex_conceal=""
+
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>h
