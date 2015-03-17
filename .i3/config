@@ -17,8 +17,24 @@ bindsym $alt+d exec setxkbmap de
 bindsym $alt+n exec setxkbmap de neo
 bindsym $alt+e exec setxkbmap us
 
-# Suspend
-bindsym $mod+x exec --no-startup-id i3lock & systemctl suspend
+# Shutdown, reboot, lockscreen
+set $Locker i3lock && sleep 1
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+x mode "$mode_system"
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -159,4 +175,5 @@ bindsym $mod+c mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
