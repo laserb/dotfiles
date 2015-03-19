@@ -9,6 +9,10 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Autostart
+exec owncloud
+exec keepassx
+
 set $mod Mod4
 set $alt Mod1 
 
