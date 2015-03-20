@@ -14,7 +14,7 @@ general {
 order += "disk /"
 order += "disk /home"
 order += "battery 0"
-order += "load"
+order += "cpu_usage"
 order += "tztime local"
 
 wireless wlan0 {
@@ -48,6 +48,9 @@ load {
         format = "%1min"
 }
 
+cpu_usage {
+        format = "%usage"
+}
 disk "/" {
         format = "%avail"
 }
