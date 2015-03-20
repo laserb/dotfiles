@@ -7,7 +7,9 @@
 
 export PATH="/usr/lib/ccache/bin/:$PATH"
 
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
+PS1='\u:\W\$ '
+
 
 # autocomplete for sudo and man
 complete -cf sudo
@@ -24,4 +26,3 @@ export HISTCONTROL=ignoredups
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
