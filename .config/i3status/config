@@ -14,6 +14,7 @@ general {
 order += "disk /"
 order += "disk /home"
 order += "battery 0"
+order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "tztime local"
 
@@ -30,6 +31,11 @@ ethernet eth0 {
 
 battery 0 {
         format = "%status %percentage %remaining"
+}
+
+cpu_temperature 0 {
+        format = "%degrees °C"
+        path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input"
 }
 
 run_watch DHCP {
