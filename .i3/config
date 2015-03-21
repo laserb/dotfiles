@@ -49,11 +49,39 @@ mode "$mode_system" {
 
 bindsym $mod+x mode "$mode_system"
 
+# workspaces
+workspace_auto_back_and_forth yes
+set $WS1 1:net
+set $WS2 2:files
+set $WS3 3:editors
+set $WS4 4:viewers
+set $WS5 5
+set $WS6 6
+set $WS7 7
+set $WS8 8
+set $WS9 9
+set $WS10 10
+
 # audio mixer
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute && killall -SIGUSR1 i3status
 bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute && killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec amixer -q set Master toggle && killall -SIGUSR1 i3status
 
+# cpupower
+set $cpupowergovernor cpupower frequency-set -g
+set $mode_cpupower cpupower (c) conservative, (o) ondemand, (u) userspace, (p) powersave
+mode "$mode_cpupower" {
+    bindsym c exec --no-startup-id $cpupowergovernor conservative, mode "default"
+    bindsym o exec --no-startup-id $cpupowergovernor ondemand, mode "default"
+    bindsym u exec --no-startup-id $cpupowergovernor userspace, mode "default"
+    bindsym p exec --no-startup-id $cpupowergovernor powersave, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+g mode "$mode_cpupower"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -134,28 +162,28 @@ bindsym $mod+u focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS10
 
 # reload the configuration file
 bindsym $mod+Shift+adiaeresis reload
