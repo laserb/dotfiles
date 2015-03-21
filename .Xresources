@@ -1,0 +1,8 @@
+xterm*foreground: white
+xterm*background: black
+XTerm*locale: true
+xterm*termName: xterm-256color
+Xterm*saveLines: 4096
+XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+xterm*faceName: DejaVu Sans Mono:size=11:antialias=true
+xterm*font: 7x13
