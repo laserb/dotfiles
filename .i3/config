@@ -15,6 +15,14 @@ exec nm-applet
 exec owncloud
 exec keepassx
 
+# Automove windows
+assign [class="Firefox"] 1
+assign [class="Nautilus"] 2
+assign [class="Gummi"] 3
+assign [class="Gedit"] 3
+assign [class="Eog"] 4
+assign [class="Evince"] 4
+
 set $mod Mod4
 set $alt Mod1 
 
