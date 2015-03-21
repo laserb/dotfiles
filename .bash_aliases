@@ -4,10 +4,10 @@
 CDPATH=/home/rf/ownCloud/:/home/rf/ownCloud/Data/ZHAW/:/home/rf/ownCloud/Data/ZHAW/Unterlagen/
 
 export LS_OPTIONS='--color=yes'
-if [ "$TERM" == "xterm" ]; then
-    # No it isn't, it's gnome-terminal
-    export TERM=xterm-256color
-fi
+#if [ "$TERM" == "xterm" ]; then
+#    # No it isn't, it's gnome-terminal
+#    export TERM=xterm-256color
+#fi
 
 # increase history to 2000
 HISTSIZE=2000

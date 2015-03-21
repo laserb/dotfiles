@@ -1,0 +1,126 @@
+#! /bin/sh
+
+# DOC
+# ==========
+# Simple autostart file for i3-wm, you can execute it from i3 config
+# file. Put this at the end:
+# exec $HOME/bin/auto-start-for-i3
+#
+# xdotool and xmessage must be installed. On BSD use jot instead of
+# seq or install seq from ports.
+#
+# Building this layout
+# ____________________________________
+# |             |                    |
+# |             | ding               |
+# |             |--------------------|
+# | emacs       |-STACK chromium    -|
+# |             |-STACK emacs-frame -|
+# |             |-STACK pdf         -|
+# |             |                    |
+# |             |                    |
+# |             |                    |
+# |-------------|                    |
+# |             |                    |
+# | terminal    |                    |
+# |_____________|____________________|
+#
+# Building a layout on another workspace switch to it with:
+# i3-msg Workspace 2
+#
+#
+# It may be usefull to disable mouse pointer and/or touchpad while
+# layouting.
+#
+# Disable mouse:
+# mouseID=`xinput list | grep -Eo 'Mouse\s.*id\=[0-9]{1,2}' | grep -Eo '[0-9]{1,2}'`
+# xinput set-prop $mouseID "Device Enabled" 0
+#
+# Enable mouse:
+# xinput set-prop $mouseID "Device Enabled" 1
+#
+# Disable the touchpad:
+# touchID=`xinput list | grep -Eo 'TouchPad\s*id\=[0-9]{1,2}' | grep -Eo '[0-9]{1,2}'`
+# xinput set-prop $touchID "Device Enabled" 0
+#
+# Enable the touchpad
+# xinput set-prop $touchID "Device Enabled" 1
+#
+#
+# Another solution how to disable/enable
+# https://github.com/deterenkelt/dotfiles/blob/master/.i3/autostart.sh
+
+
+# CODE
+# ==========
+
+# Max seconds to wait until the process is up
+MAXWAIT=30
+
+# Start the given command and wait until it's visible
+StartProg()
+{
+    "$@" &                  # Handle arguments with whitspaces
+    mypid=$!                # Pid of last background process
+    for i in `seq $MAXWAIT` # count from 1 to MAXWAIT
+    do
+    	if xdotool search --onlyvisible --pid $mypid; then
+    	    return 0
+    	fi
+	sleep 1
+    done
+    xmessage "Error on executing: $@" &
+}
+
+
+### --- emacs --- ###
+StartProg emacs
+sleep 2
+
+### --- ding ---- ###
+StartProg ding
+i3-msg border none
+sleep 2
+
+# make right half bigger
+i3-msg resize grow left 16 px or 16 ppt
+
+# split right half vertical
+i3-msg split v
+sleep 2
+
+### --- chromium --- ###
+StartProg chromium
+# XXX If you Computer is fast you can reduce the sleep time.
+sleep 5
+
+# Make ding smaller
+i3-msg resize grow up 32 px or 32 ppt
+
+### --------------------------------- stack START--- ###
+### ------------------------------------------------ ###
+i3-msg split v
+i3-msg layout stacked
+
+### --- New emacs frame --- ###
+# requires `(server-start)' in .emacs
+emacsclient --create-frame --no-wait
+sleep 2
+
+### --- pdf --- ###
+StartProg evince "~/Dokumente/Haskell/Haskell.pdf"
+sleep 2
+### ------------------------------------------------ ###
+### ---------------------------------- stack END --- ###
+
+### --- new terminal left under emacs --- ###
+i3-msg focus left
+i3-msg split v
+StartProg rxvt
+sleep 2
+
+# terminal without border and make it smaller
+i3-msg border none
+i3-msg resize shrink up 32 px or 32 ppt
+
+exit 0

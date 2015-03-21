@@ -13,14 +13,15 @@
 exec nm-applet
 exec owncloud
 exec keepassx
+exec "setxkbmap de neo; xmodmap ~/.Xmodmap"
 
 set $mod Mod4
 set $alt Mod1 
 
 # Keyboard layouts
-bindsym $alt+d exec setxkbmap de
-bindsym $alt+n exec setxkbmap de neo
-bindsym $alt+e exec setxkbmap us
+bindsym $alt+b exec "setxkbmap de"
+bindsym $alt+n exec "setxkbmap de neo; xmodmap ~/.Xmodmap"
+bindsym $alt+e exec "setxkbmap us"
 
 # Shutdown, reboot, lockscreen
 set $Locker i3lock && sleep 1
@@ -57,7 +58,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+X kill
@@ -195,3 +196,5 @@ client.focused #0088CC #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
+
+exec "$HOME/.i3/auto-start-for-i3"
