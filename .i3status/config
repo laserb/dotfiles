@@ -13,7 +13,6 @@ general {
 
 order += "disk /"
 order += "disk /home"
-order += "battery 0"
 order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "tztime local"
