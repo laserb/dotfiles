@@ -17,6 +17,7 @@ order += "battery 0"
 order += "battery 1"
 order += "cpu_temperature 0"
 order += "cpu_usage"
+order += "volume master"
 order += "tztime local"
 
 wireless wlan0 {
@@ -62,6 +63,15 @@ load {
 cpu_usage {
         format = "%usage"
 }
+
+volume master {
+    format = "♪ %volume"
+    format_muted = "mute"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
 disk "/" {
         format = "%avail"
 }
