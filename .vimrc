@@ -8,6 +8,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+set clipboard=unnamed
+set clipboard=unnamedplus
+
 set number
 color torte
 set background=dark
