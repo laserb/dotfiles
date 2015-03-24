@@ -22,12 +22,6 @@ set $WS8 8
 set $WS9 9
 set $WS10 10
 
-# Autostart
-exec "setxkbmap de neo; xmodmap ~/.Xmodmap"
-exec nm-applet
-exec owncloud
-exec keepassx
-
 # Automove windows
 assign [class="Firefox"] $WS1
 assign [class="Nautilus"] $WS2
@@ -40,9 +34,10 @@ set $mod Mod4
 set $alt Mod1 
 
 # Keyboard layouts
-bindsym $alt+b exec "setxkbmap de"
-bindsym $alt+n exec "setxkbmap de neo; xmodmap ~/.Xmodmap"
-bindsym $alt+e exec "setxkbmap us"
+exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
+bindsym $alt+b exec --no-startup-id "setxkbmap de"
+bindsym $alt+n exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
+bindsym $alt+e exec --no-startup-id "setxkbmap us"
 
 # Shutdown, reboot, lockscreen
 set $Locker i3lock && sleep 1
@@ -63,9 +58,9 @@ mode "$mode_system" {
 bindsym $mod+x mode "$mode_system"
 
 # audio mixer
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+ unmute && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec amixer -q set Master toggle && killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 3%+ unmute && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 3%- unmute && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle && killall -SIGUSR1 i3status
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -222,4 +217,8 @@ client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
+# Autostart
+exec --no-startup-id nm-applet
+exec --no-startup-id owncloud
+exec --no-startup-id keepassx
 #exec "$HOME/.i3/auto-start-for-i3"
