@@ -40,7 +40,7 @@ bindsym $alt+n exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
 bindsym $alt+e exec --no-startup-id "setxkbmap us"
 
 # Shutdown, reboot, lockscreen
-set $Locker i3lock && sleep 1
+set $Locker i3lock -c 000000 -p default -d && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
@@ -204,21 +204,21 @@ bar {
         position top
   colors {
     separator #666666
-    background #222222
+    background #000000
     statusline #dddddd
     focused_workspace #0088CC #0088CC #ffffff
-    active_workspace #333333 #333333 #ffffff
-    inactive_workspace #333333 #333333 #888888
+    active_workspace #000000 #000000 #ffffff
+    inactive_workspace #000000 #000000 #aaaaaa
     urgent_workspace #2f343a #900000 #ffffff
   }
 }
 client.focused #0088CC #0088CC #ffffff #dddddd
-client.focused_inactive #333333 #333333 #888888 #292d2e
-client.unfocused #333333 #333333 #888888 #292d2e
+client.focused_inactive #333333 #333333 #aaaaaa #292d2e
+client.unfocused #333333 #333333 #aaaaaa #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
+# set background image
+exec --no-startup-id feh --bg-scale ~/ownCloud/Arch-Linux/Wallpaper/wallpaper.png
+
 # Autostart
-exec --no-startup-id nm-applet
-exec --no-startup-id owncloud
-exec --no-startup-id keepassx
-#exec "$HOME/.i3/auto-start-for-i3"
+exec "$HOME/.i3/auto-start-for-i3"
