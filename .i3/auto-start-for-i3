@@ -80,9 +80,9 @@ StartProg i3-sensible-terminal wcalc
 sleep 2
 
 i3-msg Workspace 1
-exec --no-startup-id nm-applet
-exec --no-startup-id owncloud
-exec --no-startup-id keepassx
-exec --no-startup-id xbindkeys
+nm-applet &
+owncloud &
+keepassx &
+xbindkeys &
 
 exit 0
