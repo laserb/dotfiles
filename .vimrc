@@ -7,6 +7,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set autowrite
 
 set clipboard=unnamed
 set clipboard=unnamedplus
@@ -35,6 +36,11 @@ let g:indentLine_char = '┆'
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
+
+" map make
+nnoremap <F9> :silent make\|redraw!\|cc<CR>
+nnoremap <F8> :cnext<CR>
+nnoremap <F7> :cprevious<CR>
 
 " Protect large files from sourcing and other overhead.
 " Files become read only
