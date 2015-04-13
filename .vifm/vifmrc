@@ -302,6 +302,10 @@ filextype */
         \ Thunar %f &,
 fileviewer .*/,*/ tree %f
 
+" Xournal
+filextype *.xoj
+        \ xournal %f &
+
 " Syntax highlighting in preview
 "
 " Explicitly set highlight type for some extensions
