@@ -39,6 +39,8 @@ let g:indentLine_leadingSpaceChar = '·'
 
 " map make
 nnoremap <F9> :silent make\|redraw!\|cc<CR>
+nnoremap <F10> :silent make run\|redraw!\|cc<CR>
+nnoremap <F11> :silent make all\|redraw!\|cc<CR>
 nnoremap <F8> :cnext<CR>
 nnoremap <F7> :cprevious<CR>
 
