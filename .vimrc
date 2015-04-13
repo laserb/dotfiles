@@ -37,6 +37,9 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
 
+" open new terminal at current position
+nnoremap ,t :silent :!xterm &<CR>
+
 " map make
 nnoremap <F9> :silent make\|redraw!\|cc<CR>
 nnoremap <F10> :silent make run\|redraw!\|cc<CR>
