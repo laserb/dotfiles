@@ -39,6 +39,11 @@ bindsym $alt+b exec --no-startup-id "setxkbmap de"
 bindsym $alt+n exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
 bindsym $alt+e exec --no-startup-id "setxkbmap us"
 
+# Program shortcuts
+bindsym $mod+f exec i3-sensible-terminal vifm
+bindsym $mod+Shift+Return exec i3-sensible-terminal vifm
+bindsym $mod+b exec --no-startup-id firefox
+
 # Shutdown, reboot, lockscreen
 set $Locker i3lock -c 000000 -p default -d && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
