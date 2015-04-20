@@ -8,6 +8,8 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autowrite
+" remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
 
 set clipboard=unnamed
 set clipboard=unnamedplus
@@ -30,7 +32,7 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <C-r><C-o>+
 
-set list lcs=tab:\┆\ 
+set list lcs=tab:\┆\
 let g:indentLine_color_term = 236
 let g:indentLine_char = '┆'
 let g:indentLine_showFirstIndentLevel = 1
