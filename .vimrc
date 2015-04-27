@@ -53,6 +53,9 @@ nnoremap <F11> :silent make all\|redraw!\|cc<CR>
 nnoremap <F8> :cnext<CR>
 nnoremap <F7> :cprevious<CR>
 
+" CtrlP settings
+let g:ctrlp_by_filename = 1
+
 " Protect large files from sourcing and other overhead.
 " Files become read only
 if !exists("my_auto_commands_loaded")
