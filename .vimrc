@@ -11,8 +11,12 @@ set autowrite
 " remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
+" copy to clipboard
 set clipboard=unnamed
 set clipboard=unnamedplus
+
+" ctags
+set tags=./tags,tags;$HOME
 
 set number
 color torte
