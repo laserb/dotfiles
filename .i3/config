@@ -157,6 +157,7 @@ bindsym $mod+9 workspace $WS9
 bindsym $mod+0 workspace $WS10
 
 # move focused container to workspace
+bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+1 move container to workspace $WS1
 bindsym $mod+Shift+2 move container to workspace $WS2
 bindsym $mod+Shift+3 move container to workspace $WS3
@@ -325,6 +326,7 @@ mode "$mode_qwertz" {
     bindsym $mod+0 workspace $WS10
 
     # move focused container to workspace
+    bindsym $mod+Tab workspace back_and_forth
     bindsym $mod+Shift+1 move container to workspace $WS1
     bindsym $mod+Shift+2 move container to workspace $WS2
     bindsym $mod+Shift+3 move container to workspace $WS3
