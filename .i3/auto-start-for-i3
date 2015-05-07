@@ -73,15 +73,13 @@ StartProg()
 }
 i3-msg Workspace 10
 StartProg i3-sensible-terminal
-sleep 2
-
 i3-msg split h
 StartProg i3-sensible-terminal wcalc
-sleep 2
+sleep 1
 
 i3-msg Workspace 2:files
 StartProg i3-sensible-terminal vifm
-sleep 2
+sleep 1
 
 i3-msg Workspace 1:net
 nm-applet &
