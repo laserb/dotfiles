@@ -34,7 +34,7 @@ assign [class="Eog"] $WS4
 assign [class="Evince"] $WS4
 
 set $mod Mod4
-set $alt Mod1 
+set $alt Mod1
 
 # Keyboard layouts
 exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
@@ -42,6 +42,7 @@ exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
 # Program shortcuts
 bindsym $mod+Shift+Return exec i3-sensible-terminal vifm
 bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+f exec --no-startup-id touchscreen_toggle
 
 # Shutdown, reboot, lockscreen
 set $Locker i3lock -c 000000 -p default -d && sleep 1
@@ -52,7 +53,7 @@ mode "$mode_system" {
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -354,7 +355,7 @@ mode "$mode_system_qwertz" {
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "$mode_qwertz"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "$mode_qwertz"
     bindsym r exec --no-startup-id systemctl reboot, mode "$mode_qwertz"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "$mode_qwertz"  
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "$mode_qwertz"
 
     # back to normal: Enter or Escape
     bindsym Return mode "$mode_qwertz"
