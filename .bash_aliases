@@ -3,6 +3,10 @@
 # cd search pathes
 CDPATH=/home/rf/ownCloud/:/home/rf/ownCloud/Data/ZHAW/:/home/rf/ownCloud/Data/ZHAW/Unterlagen/
 
+# ask once for the ssh key
+ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+ssh-add -l >/dev/null || alias git='ssh-add -l >/dev/null || ssh-add && alias git="LANG=en_GB git";git'
+
 export LS_OPTIONS='--color=yes'
 #if [ "$TERM" == "xterm" ]; then
 #    # No it isn't, it's gnome-terminal
@@ -32,8 +36,7 @@ alias ld='ls -d $LS_OPTIONS -af --color'
 alias lad='ls -d $LS_OPTIONS -al --color'
 alias grep='grep --colour'
 
-# Set Git language to English
-alias git='LANG=en_GB git'
+# show git history
 alias gitc='git log --graph --pretty=oneline --abbrev-commit --decorate'
 
 # Logins
