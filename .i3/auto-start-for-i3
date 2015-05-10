@@ -77,7 +77,7 @@ i3-msg split h
 StartProg i3-sensible-terminal wcalc
 sleep 1
 
-i3-msg Workspace 2:files
+i3-msg Workspace 2
 StartProg i3-sensible-terminal vifm
 sleep 1
 
