@@ -15,6 +15,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 set clipboard=unnamed
 set clipboard=unnamedplus
 
+" set swap(.swp), backup(~), undo(.udf) directory to temp
+set backupdir=/tmp//
+set directory=/tmp//
+
 " ctags
 set tags=./tags,tags;$HOME
 
