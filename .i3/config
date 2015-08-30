@@ -36,6 +36,7 @@ exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
 
 # Program shortcuts
 bindsym $mod+Shift+Return exec i3-sensible-terminal vifm
+bindsym $mod+Ctrl+Return exec http_proxy=localhost:8118 vimb --socket
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+f exec --no-startup-id touchscreen_toggle
 
