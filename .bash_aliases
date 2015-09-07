@@ -38,7 +38,10 @@ alias grep='grep --colour'
 
 # show git history
 alias gitc='git log --graph --pretty=oneline --abbrev-commit --decorate'
+
+# make some stuff english
 alias git='LANG=en git'
+alias make='LANG=en make'
 
 # Logins
 alias logins='cat /var/log/auth.log | grep "user rf"'
