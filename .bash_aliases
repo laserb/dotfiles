@@ -110,3 +110,5 @@ orphans() {
   fi
 }
 
+# nvm
+source /usr/share/nvm/init-nvm.sh
