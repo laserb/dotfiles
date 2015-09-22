@@ -136,6 +136,12 @@ command! vgrep vim "+grep %a"
 command! reload :write | restart
 command! xournal xournal %f &
 
+" -----------------------------------------------------------------------------
+" path commands
+command! repo :cd ~/REPOS
+command! zhaw :cd ~/ownCloud/Data/ZHAW/Unterlagen
+command! zrepo :cd ~/REPOS/ZHAW
+
 " ------------------------------------------------------------------------------
 
 " The file type is for the default programs to be used with
