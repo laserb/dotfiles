@@ -134,6 +134,7 @@ command! mkcd :mkdir %a | cd %a
 command! vim !xterm -e vim %f &
 command! vgrep vim "+grep %a"
 command! reload :write | restart
+command! xournal xournal %f &
 
 " ------------------------------------------------------------------------------
 
