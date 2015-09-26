@@ -40,7 +40,6 @@ alias grep='grep --colour'
 alias gitc='git log --graph --pretty=oneline --abbrev-commit --decorate'
 
 # make some stuff english
-alias git='LANG=en git'
 alias make='LANG=en make'
 
 # Logins
