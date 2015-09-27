@@ -5,7 +5,7 @@ CDPATH=/home/rf/ownCloud/:/home/rf/ownCloud/Data/ZHAW/:/home/rf/ownCloud/Data/ZH
 
 # ask once for the ssh key
 ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-ssh-add -l >/dev/null || alias git='ssh-add -l >/dev/null || ssh-add && alias git="LANG=en_GB git";git'
+ssh-add -l >/dev/null && alias git='LANG=en git' || alias git='ssh-add -l >/dev/null || ssh-add && alias git="LANG=en git"; git'
 
 export LS_OPTIONS='--color=yes'
 #if [ "$TERM" == "xterm" ]; then
