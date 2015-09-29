@@ -47,6 +47,12 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
 
+" vim-slime
+let g:slime_target = "tmux"
+let g:slime_paste_file = tempname()
+let g:slime_python_ipython = 1
+" let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+
 " open new terminal at current position
 nnoremap ,t :silent :!xterm &<CR>
 
