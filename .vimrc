@@ -40,6 +40,20 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <C-r><C-o>+
 
+" syntastic
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 0
+let g:syntastic_aggregate_errors = 1
+
+" mark white spaces
 set list lcs=tab:\┆\
 let g:indentLine_color_term = 236
 let g:indentLine_char = '┆'
@@ -60,8 +74,6 @@ nnoremap ,t :silent :!xterm &<CR>
 nnoremap <F9> :silent make\|redraw!\|cc<CR>
 nnoremap <F10> :silent make run\|redraw!\|cc<CR>
 nnoremap <F11> :silent make all\|redraw!\|cc<CR>
-nnoremap <F8> :cnext<CR>
-nnoremap <F7> :cprevious<CR>
 
 " CtrlP settings
 let g:ctrlp_by_filename = 1
