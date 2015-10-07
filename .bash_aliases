@@ -42,6 +42,9 @@ alias gitc='git log --graph --pretty=oneline --abbrev-commit --decorate'
 # make some stuff english
 alias make='LANG=en make'
 
+# default java classpath
+export CLASSPATH="bin:lib:.:lib/*:*"
+
 # Logins
 alias logins='cat /var/log/auth.log | grep "user rf"'
 
