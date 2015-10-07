@@ -53,6 +53,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 0
 let g:syntastic_aggregate_errors = 1
 
+let g:syntastic_java_javac_classpath = "bin:lib:.:lib/*:*"
+
 " mark white spaces
 set list lcs=tab:\┆\
 let g:indentLine_color_term = 236
