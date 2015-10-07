@@ -111,6 +111,3 @@ orphans() {
     sudo pacman -Rs $(pacman -Qdtq)
   fi
 }
-
-# nvm
-source /usr/share/nvm/init-nvm.sh
