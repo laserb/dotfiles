@@ -36,8 +36,9 @@ alias ld='ls -d $LS_OPTIONS -af --color'
 alias lad='ls -d $LS_OPTIONS -al --color'
 alias grep='grep --colour'
 
-# show git history
+# git alias
 alias gitc='git log --graph --pretty=oneline --abbrev-commit --decorate'
+alias git-branch-clean='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
 
 # make some stuff english
 alias make='LANG=en make'
