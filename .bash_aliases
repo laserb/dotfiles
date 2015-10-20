@@ -52,6 +52,10 @@ alias logins='cat /var/log/auth.log | grep "user rf"'
 #most used commands
 alias most='history | awk '\''{print $2}'\'' | awk '\''BEGIN{FS="|"}{print $1}'\'' | sort | uniq -c | sort -n | tail -n 20 | sort -nr'
 
+#vim confusion
+alias :q='exit'
+alias :wq='exit'
+
 #Preload Files
 alias preload_files='sudo less /var/lib/preload/preload.state'
 
