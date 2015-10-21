@@ -1,8 +1,5 @@
 # custom bash settings
 
-# cd search pathes
-CDPATH=/home/rf/ownCloud/:/home/rf/ownCloud/Data/ZHAW/:/home/rf/ownCloud/Data/ZHAW/Unterlagen/
-
 # ask once for the ssh key
 ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 ssh-add -l >/dev/null && alias git='LANG=en git' || alias git='ssh-add -l >/dev/null || ssh-add && alias git="LANG=en git"; git'
