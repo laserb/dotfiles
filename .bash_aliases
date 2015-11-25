@@ -41,7 +41,7 @@ alias git-branch-clean='git branch --merged | grep -v "\*" | grep -v master | xa
 alias make='LANG=en make'
 
 # default java classpath
-export CLASSPATH="bin:lib:.:lib/*:*"
+export CLASSPATH="bin:lib:.:lib/*:*:/usr/share/java/*"
 
 # Logins
 alias logins='cat /var/log/auth.log | grep "user rf"'
@@ -59,7 +59,7 @@ alias preload_files='sudo less /var/lib/preload/preload.state'
 #PDF verkleinern
 function pdfsmall
 {
-	command gs -dTextAlphaBits=4 -sDEVICE=pdfwrite -sOutputFile=$2 -dBATCH -dNOPAUSE -dPDFSETTINGS=/ebook $1
+	command gs -sDEVICE=pdfwrite -sOutputFile=$2 -dBATCH -dNOPAUSE -dPDFSETTINGS=/ebook $1
 }
 
 #PDF deskew
