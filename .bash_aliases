@@ -42,6 +42,7 @@ alias make='LANG=en make'
 
 # default java classpath
 export CLASSPATH="bin:lib:.:lib/*:*:/usr/share/java/*"
+alias junit='java -cp ${CLASSPATH} org.junit.runner.JUnitCore'
 
 # Logins
 alias logins='cat /var/log/auth.log | grep "user rf"'
