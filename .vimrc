@@ -29,7 +29,7 @@ set background=dark
 " highlight long lines
 let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(100,999),",")
-highlight ColorColumn guibg=#1c1c1c ctermbg=232
+highlight ColorColumn guibg=#2d2d2d ctermbg=234
 
 " do not conceal in latex
 let g:tex_conceal=""
