@@ -37,6 +37,18 @@ alias grep='grep --colour'
 alias gitc='git log --graph --pretty=oneline --abbrev-commit --decorate'
 alias git-branch-clean='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
 
+# Kill all running containers.
+alias dockerkillall='docker kill $(docker ps -q)'
+
+# Delete all stopped containers.
+alias dockercleanc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+
+# Delete all untagged images.
+alias dockercleani='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+
+# Delete all stopped containers and untagged images.
+alias dockerclean='dockercleanc || true && dockercleani'
+
 # make some stuff english
 alias make='LANG=en make'
 
