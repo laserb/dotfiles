@@ -8,3 +8,4 @@ xterm*faceName: DejaVu Sans Mono:size=11:antialias=true
 xterm*font: 7x13
 xterm*pointerMode: 0
 XTerm*selectToClipboard: true
+XTerm*metaSendsEscape: true
