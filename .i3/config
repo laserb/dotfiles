@@ -219,6 +219,14 @@ client.focused_inactive #333333 #333333 #aaaaaa #292d2e
 client.unfocused #333333 #333333 #aaaaaa #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
+for_window [class=".*"] title_format "<b>%title</b>"
+for_window [class="(?i)firefox"] title_format "<b><span background='#8001C0'>FIREFOX</span></b>"
+for_window [class="(?i)eclipse"] title_format "<b><span background='red'>ECLIPSE</span></b>"
+for_window [class="(?i)vimb"] title_format "<b><span background='#006500'>%title</span></b>"
+for_window [class="(?i)pcmanfm"] title_format "<b><span background='#00bfff'>%title</span></b>"
+for_window [class="(?i)xterm$"] title_format "<b>>_ %title</b>"
+for_window [title="(?i)VIFM$"] title_format "<b><span background='#824007'>%title</span></b>"
+
 # set background image
 exec --no-startup-id feh --bg-scale ~/ownCloud/Arch-Linux/Wallpaper/wallpaper.png
 
