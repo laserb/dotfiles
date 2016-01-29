@@ -54,6 +54,33 @@ alias most='history | awk '\''{print $2}'\'' | awk '\''BEGIN{FS="|"}{print $1}'\
 alias :q='exit'
 alias :wq='exit'
 
+# create directories recursively if they do not exist
+# do something with it, ie. move/copy files to it
+# mkdo cp source destination
+# mkdo mv source destination
+function mkdo
+{
+    if [ "$#" == 0 ]; then
+        echo "Usage: $0 command [source] destination [arguments]"
+        return 1
+    fi
+    command=$1
+    shift
+    if [ "$#" == 1 ]; then
+        dest=$1
+    else
+        dest=$2
+    fi
+    if [ -d $dest ]; then
+        $command "$*"
+    else
+        if [ ! -e $dest ]; then
+            mkdir -p $dest;
+            $command "$*"
+        fi
+    fi
+}
+
 #Preload Files
 alias preload_files='sudo less /var/lib/preload/preload.state'
 
