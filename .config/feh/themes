@@ -1,0 +1,17 @@
+feh --keep-zoom-vp \
+    --image-bg black \
+    --multiwindow
+
+thumbs --sort name \
+       --image-bg black \
+       --thumbnails \
+       --thumb-width 320 \
+       --thumb-height 240 \
+
+fast --keep-zoom-vp \
+     --image-bg black \
+     -R 0.1 -d -x \
+
+slow --keep-zoom-vp \
+     --image-bg black \
+     -R 3 \
