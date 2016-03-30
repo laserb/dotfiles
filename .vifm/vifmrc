@@ -132,6 +132,8 @@ command! run !! ./%f
 command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vim !xterm -e vim %f &
+command! fehfast !feh -T fast %f &
+command! feh !feh %f &
 command! vgrep vim "+grep %a"
 command! reload :write | restart
 command! xournal xournal %f &
@@ -230,6 +232,7 @@ fileviewer *.[1-8] gtbl %c | groff -Tascii -man | col -b
 
 " Image
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
+        \ feh -T slow %f &,
         \ {View in sxiv}
         \ sxiv,
         \ {View in gpicview}
