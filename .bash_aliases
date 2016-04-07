@@ -93,6 +93,12 @@ function mkdo
     fi
 }
 
+# Set xterm title
+function title
+{
+    echo -ne "\033]0;$1\007"
+}
+
 #Preload Files
 alias preload_files='sudo less /var/lib/preload/preload.state'
 
