@@ -97,6 +97,25 @@ nnoremap <F11> :silent make all\|redraw!\|cc<CR>
 " CtrlP settings
 let g:ctrlp_by_filename = 1
 
+" The following maps the F8 key to toggle between hex and binary (while also
+" setting the
+" " noeol and binary flags, so if you :write your file, vim doesn't perform
+" unwanted conversions.
+noremap <F4> :call HexIt()<CR>
+let $in_hex=0
+function! HexIt()
+    set binary
+    set noeol
+    if $in_hex>0
+        :%!xxd -r
+        let $in_hex=0
+    else
+        :%!xxd
+        let $in_hex=1
+    endif
+endfunction
+
+
 " Protect large files from sourcing and other overhead.
 " Files become read only
 if !exists("my_auto_commands_loaded")
