@@ -231,7 +231,7 @@ for_window [class="(?i)xterm$"] title_format "<b>>_ %title</b>"
 for_window [title="(?i)VIFM$"] title_format "<b><span background='#824007'>%title</span></b>"
 
 # set background image
-exec --no-startup-id feh --bg-scale ~/ownCloud/Arch-Linux/Wallpaper/wallpaper.png
+exec --no-startup-id feh -T none --bg-scale ~/ownCloud/Arch-Linux/Wallpaper/wallpaper.png
 
 # Autostart
 exec "$HOME/.i3/auto-start-for-i3"
