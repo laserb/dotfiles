@@ -77,6 +77,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>h
 nnoremap <c-h> <c-w>l
+nnoremap <c-Down> <c-w>j
+nnoremap <c-Up> <c-w>k
+nnoremap <c-Left> <c-w>h
+nnoremap <c-Right> <c-w>l
 
 " copy paste mappings
 vmap <C-c> "+yi
@@ -98,7 +102,7 @@ let g:syntastic_auto_jump = 0
 let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_java_javac_classpath = "bin:lib:.:lib/*:*:/usr/share/java/*"
-let g:syntastic_python_checkers = ["pylint"]
+let g:syntastic_python_checkers = ["pylint2"]
 let g:syntastic_python_pylint_post_args="--max-line-length=100"
 
 " mark white spaces
@@ -125,6 +129,26 @@ nnoremap <F11> :silent make all\|redraw!\|cc<CR>
 
 " CtrlP settings
 let g:ctrlp_by_filename = 1
+
+" vim airline
+set laststatus=2
+set ttimeoutlen=50
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
+let g:airline#extensions#default#section_truncate_width = {}
+" let g:airline#extensions#branch#use_vcscommand = 1
+
 
 " The following maps the F8 key to toggle between hex and binary (while also
 " setting the
