@@ -1,0 +1,3 @@
+*.pyc
+.config/gummi/gummi.cfg
+.vim/bundle

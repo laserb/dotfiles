@@ -1,3 +1,32 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+call vundle#rc()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" My Bundles here:
+" Install with :PluginInstall
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'sudar/vim-arduino-syntax'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-scripts/LanguageTool'
+Plugin 'scrooloose/syntastic'
+Plugin 'https://fedorapeople.org/cgit/wwoods/public_git/vim-scripts.git'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'jpalardy/vim-slime'
+Plugin 'Yggdroot/indentLine'
+Plugin 'fsharp/vim-fsharp'
+Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'justmao945/vim-clang'
+Plugin 'spacewander/vim-coloresque'
+Plugin 'editorconfig/editorconfig-vim'
+
+filetype plugin indent on     " required!
+
 syntax on
 filetype plugin indent on
 " use files in ~/.vim/after/ftplugin to add
