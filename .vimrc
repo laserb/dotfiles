@@ -154,7 +154,9 @@ let g:airline_mode_map = {
     \ '' : 'S',
     \ }
 let g:airline#extensions#default#section_truncate_width = {}
-" let g:airline#extensions#branch#use_vcscommand = 1
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
+
 " UltiSnips
 " Trigger configuration.
 let g:UltiSnipsExpandTrigger="<tab>"
