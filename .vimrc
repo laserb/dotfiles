@@ -26,6 +26,8 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'justmao945/vim-clang'
 Plugin 'spacewander/vim-coloresque'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 
@@ -150,6 +152,14 @@ let g:airline_mode_map = {
     \ }
 let g:airline#extensions#default#section_truncate_width = {}
 " let g:airline#extensions#branch#use_vcscommand = 1
+" UltiSnips
+" Trigger configuration.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 
 " The following maps the F8 key to toggle between hex and binary (while also
