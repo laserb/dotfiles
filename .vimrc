@@ -26,6 +26,7 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'justmao945/vim-clang'
 Plugin 'spacewander/vim-coloresque'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
