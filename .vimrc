@@ -1,7 +1,9 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -25,7 +27,7 @@ Plugin 'justmao945/vim-clang'
 Plugin 'spacewander/vim-coloresque'
 Plugin 'editorconfig/editorconfig-vim'
 
-filetype plugin indent on     " required!
+call vundle#end()
 
 syntax on
 filetype plugin indent on
