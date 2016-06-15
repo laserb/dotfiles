@@ -62,6 +62,10 @@ autocmd FileType markdown let b:noStripWhitespace=1
 set clipboard=unnamed
 set clipboard=unnamedplus
 
+" split
+set splitright
+set splitbelow
+
 " set swap(.swp), backup(~), undo(.udf) directory to temp
 set backupdir=/tmp//
 set directory=/tmp//
