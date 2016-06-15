@@ -125,6 +125,15 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
 
+" vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'auto_export': 1, 'auto_toc': 1}]
+nmap <Leader>wv <Plug>VimwikiVSplitLink
+nmap <Leader>wh <Plug>VimwikiSplitLink
+nmap <Leader>wb <Plug>VimwikiGoBackLink
+nmap <Leader>k <Plug>VimwikiDiaryPrevDay
+nmap <Leader>j <Plug>VimwikiDiaryNextDay
+nmap <Leader>wc <Plug>Vimwiki2HTML
+
 " vim-slime
 let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
