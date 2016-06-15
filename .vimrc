@@ -31,6 +31,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'kergoth/vim-bitbake'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()
 
