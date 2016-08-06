@@ -14,6 +14,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'nixprime/cpsm'
 Plugin 'vim-scripts/LanguageTool'
 Plugin 'scrooloose/syntastic'
 Plugin 'https://fedorapeople.org/cgit/wwoods/public_git/vim-scripts.git'
@@ -149,7 +150,11 @@ nnoremap <F10> :silent make run\|redraw!\|cc<CR>
 nnoremap <F11> :silent make all\|redraw!\|cc<CR>
 
 " CtrlP settings
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 let g:ctrlp_by_filename = 1
+let g:ctrlp_max_files = 0
+let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
+let g:ctrlp_root_markers = ['.ctrlp']
 
 " vim airline
 set laststatus=2
