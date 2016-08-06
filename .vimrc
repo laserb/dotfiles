@@ -32,7 +32,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'kergoth/vim-bitbake'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'vimwiki/vimwiki'
+Plugin 'laserb/vimwiki'
 
 call vundle#end()
 
@@ -58,6 +58,7 @@ endfun
 
 autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd FileType markdown let b:noStripWhitespace=1
+autocmd FileType vimwiki let b:noStripWhitespace=1
 
 " copy to clipboard
 set clipboard=unnamed
@@ -127,7 +128,13 @@ let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
 
 " vimwiki
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'auto_export': 1, 'auto_toc': 1}]
+let g:vimwiki_list = [{
+            \ 'path': '~/vimwiki/',
+            \ 'auto_export': 1,
+            \ 'auto_toc': 1,
+            \ 'section_class': 'link-target',
+            \ }]
+let g:vimwiki_header_mode = 1
 nmap <Leader>wv <Plug>VimwikiVSplitLink
 nmap <Leader>wh <Plug>VimwikiSplitLink
 nmap <Leader>wb <Plug>VimwikiGoBackLink
