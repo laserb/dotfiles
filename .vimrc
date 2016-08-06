@@ -148,6 +148,10 @@ let g:slime_paste_file = tempname()
 let g:slime_python_ipython = 1
 " let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 
+" vim-clang
+" disable autocompletion
+let g:clang_auto = 0
+
 " open new terminal at current position
 nnoremap ,t :silent :!xterm &<CR>
 
