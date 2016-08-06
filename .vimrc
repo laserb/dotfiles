@@ -186,6 +186,7 @@ let g:airline_mode_map = {
 let g:airline#extensions#default#section_truncate_width = {}
 let g:airline#extensions#wordcount#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#branch#enabled = 0
 
 " UltiSnips
 " Trigger configuration.
