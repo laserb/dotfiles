@@ -1,5 +1,9 @@
 # custom bash settings
 
+# use vim as editor
+export EDITOR=vim
+export VISUAL=vim
+
 # ask once for the ssh key
 ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 ssh-add -l >/dev/null && alias git='LANG=en git' || alias git='ssh-add -l >/dev/null || ssh-add && alias git="LANG=en git"; git'
