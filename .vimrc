@@ -116,7 +116,7 @@ let g:syntastic_auto_jump = 0
 let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_java_javac_classpath = "bin:lib:.:lib/*:*:/usr/share/java/*"
-let g:syntastic_python_checkers = ["pylint2"]
+let g:syntastic_python_checkers = ["pylint"]
 let g:syntastic_python_pylint_post_args="--max-line-length=100"
 
 " mark white spaces
