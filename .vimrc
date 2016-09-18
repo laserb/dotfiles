@@ -152,6 +152,25 @@ function! VimwikiToggleUrlVisibility()
     edit
 endfunction
 
+function! VimwikiLinkHandler(link)
+    " Use Vim to open external files with the 'vfile:' scheme.  E.g.:
+    "   1) [[vfile:~/Code/PythonProject/abc123.py]]
+    "   2) [[vfile:./|Wiki Home]]
+    let link = a:link
+    if link =~# '^dir:'
+        let link = link[6:]
+    else
+        return 0
+    endif
+    try
+        exe '!i3-sensible-terminal -e vifm '.link.' &'
+        return 1
+    catch
+        echo "Start vifm failed"
+        return 0
+    endtry
+endfunction
+
 " vim-slime
 let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
