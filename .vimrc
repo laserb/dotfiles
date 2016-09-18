@@ -141,6 +141,15 @@ nmap <Leader>wb <Plug>VimwikiGoBackLink
 nmap <Leader>k <Plug>VimwikiDiaryPrevDay
 nmap <Leader>j <Plug>VimwikiDiaryNextDay
 nmap <Leader>wc <Plug>Vimwiki2HTML
+nmap <Leader>wu :call VimwikiToggleUrlVisibility()<CR>
+function! VimwikiToggleUrlVisibility()
+    if g:vimwiki_url_maxsave
+        let g:vimwiki_url_maxsave = 0
+    else
+        let g:vimwiki_url_maxsave = 15
+    endif
+    edit
+endfunction
 
 " vim-slime
 let g:slime_target = "tmux"
