@@ -33,6 +33,7 @@ Plugin 'kergoth/vim-bitbake'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'laserb/vimwiki'
+Plugin 'vim-scripts/Conque-GDB'
 
 call vundle#end()
 
@@ -156,6 +157,11 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
 let g:slime_python_ipython = 1
 " let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+
+" conque-gdb
+let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
+let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
+let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly
 
 " vim-clang
 " disable autocompletion
