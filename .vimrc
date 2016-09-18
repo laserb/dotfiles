@@ -163,7 +163,7 @@ function! VimwikiLinkHandler(link)
         return 0
     endif
     try
-        exe '!i3-sensible-terminal -e vifm '.link.' &'
+        exe 'silent !i3-sensible-terminal -e vifm '.link.' &'
         return 1
     catch
         echo "Start vifm failed"
