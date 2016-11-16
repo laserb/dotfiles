@@ -51,19 +51,45 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autowrite
-" remove trailing whitespaces
 
+" Restore cursor position, window position, and last search after running a
+" command.
+function! Preserve(command)
+  " Save the last search.
+  let search = @/
+
+  " Save the current cursor position.
+  let cursor_position = getpos('.')
+
+  " Save the current window position.
+  normal! H
+  let window_position = getpos('.')
+  call setpos('.', cursor_position)
+
+  " Execute the command.
+  execute a:command
+
+  " Restore the last search.
+  let @/ = search
+
+  " Restore the previous window position.
+  call setpos('.', window_position)
+  normal! zt
+
+  " Restore the previous cursor position.
+  call setpos('.', cursor_position)
+endfunction
+
+" remove trailing whitespaces
 fun! StripTrailingWhitespace()
     " Only strip if the b:noStripeWhitespace variable isn't set
     if exists('b:noStripWhitespace')
         return
     endif
-    %s/\s\+$//e
+    call Preserve(':%s/\s\+$//e')
 endfun
 
 autocmd BufWritePre * call StripTrailingWhitespace()
-autocmd FileType markdown let b:noStripWhitespace=1
-autocmd FileType vimwiki let b:noStripWhitespace=1
 
 " copy to clipboard
 set clipboard=unnamed
