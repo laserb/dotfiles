@@ -89,7 +89,18 @@ fun! StripTrailingWhitespace()
     call Preserve(':%s/\s\+$//e')
 endfun
 
+" Re-format the whole buffer.
+function! Format()
+    " Only strip if the b:autoformat variable is set
+    if exists('b:autoformat')
+        call Preserve('normal gggqG')
+    endif
+endfunction
+
 autocmd BufWritePre * call StripTrailingWhitespace()
+autocmd BufWritePre * call Format()
+autocmd FileType markdown let b:noStripWhitespace=1
+autocmd FileType vimwiki let b:noStripWhitespace=1
 
 " copy to clipboard
 set clipboard=unnamed
