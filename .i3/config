@@ -41,7 +41,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+f exec --no-startup-id touchscreen_toggle
 
 # Shutdown, reboot, lockscreen
-set $Locker i3lock -c 000000 -p default -d && sleep 1
+set $Locker i3lock -c 000000 -p default && sleep 1
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
