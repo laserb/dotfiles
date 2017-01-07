@@ -54,4 +54,5 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval $(<~/.ssh-agent-thing)
 fi
 start-pulseaudio-x11 &
+xautolock -time 30 -locker "i3lock -c 000000 -p default & sleep 1 && systemctl suspend" -notify 30 -notifier "notify-send -u critical -t 5000 'Auto suspend in 30s'" -detectsleep &
 exec i3
