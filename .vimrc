@@ -34,6 +34,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'laserb/vimwiki'
 Plugin 'vim-scripts/Conque-GDB'
+Plugin 'chrisbra/vim-diff-enhanced'
 
 call vundle#end()
 
@@ -72,6 +73,12 @@ set splitbelow
 " set swap(.swp), backup(~), undo(.udf) directory to temp
 set backupdir=/tmp//
 set directory=/tmp//
+
+" vimdiff enhanced
+" started In Diff-Mode set diffexpr (plugin not loaded yet)
+if &diff
+    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=histogram")'
+endif
 
 " ctags
 set tags=./tags,tags;$HOME
