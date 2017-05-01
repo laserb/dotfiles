@@ -1,3 +1,6 @@
 *.pyc
 .config/gummi/gummi.cfg
 .vim/bundle
+.vim/UltiSnips
+.config/mimeapps.list
+.vim/.netrwhist
