@@ -141,9 +141,10 @@ command! xournal xournal %f &
 
 " -----------------------------------------------------------------------------
 " path commands
-command! repo :cd ~/REPOS
+command! mount !mount %d
+command! git :cd ~/git
 command! zhaw :cd ~/ownCloud/Data/ZHAW/Unterlagen
-command! zrepo :cd ~/REPOS/ZHAW
+command! zrepo :cd ~/git/ZHAW
 
 " ------------------------------------------------------------------------------
 
