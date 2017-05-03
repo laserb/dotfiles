@@ -36,6 +36,8 @@ Plugin 'laserb/vimwiki'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
+Plugin 'Rykka/riv.vim'
+Plugin 'Rykka/InstantRst'
 
 call vundle#end()
 
