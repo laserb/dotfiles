@@ -98,9 +98,33 @@ function mkdo
 }
 
 # Set xterm title
+function auto_title
+{
+    if [ -v $MYTITLE ]
+    then
+        repo_name=$(git rev-parse --show-toplevel 2>> /dev/null)
+        if [ -v ${repo_name} ]
+        then
+            pwd
+        else
+            replace="s#${repo_name}/##g"
+            if [ "$(pwd)" = $repo_name ]
+            then
+                echo $(basename $repo_name)
+            else
+                echo $(basename $repo_name) $(pwd | sed $replace)
+            fi
+        fi
+    else
+        echo $MYTITLE
+    fi
+}
+
+PS1="\[\033]0;\$(auto_title)\007\]$PS1"
+
 function title
 {
-    echo -ne "\033]0;$1\007"
+    MYTITLE=$1
 }
 
 #Preload Files
