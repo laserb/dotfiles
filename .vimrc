@@ -38,6 +38,8 @@ Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'Rykka/riv.vim'
 Plugin 'Rykka/InstantRst'
+Plugin 'laserb/vim-instant-markdown'
+Plugin 'laserb/instant-markdown-d'
 
 call vundle#end()
 
@@ -174,6 +176,12 @@ let g:indentLine_char = '┆'
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
+
+" instant markdown
+let g:instant_markdown_autostart = 0
+let g:instant_markdown_port = 8890
+autocmd FileType markdown nnoremap <F9> :silent InstantMarkdownPreview<CR>
+let g:instant_markdown_browser = 'electron'
 
 " vimwiki
 let g:vimwiki_list = [{
