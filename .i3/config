@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $terminal i3-sensible-terminal
+set $terminal termite
 set $dmenu j4-dmenu-desktop --display-binary
 
 # workspaces
