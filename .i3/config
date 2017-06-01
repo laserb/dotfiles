@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $terminal termite
+set $terminal urxvt
 set $dmenu j4-dmenu-desktop --display-binary
 
 # workspaces
@@ -35,11 +35,11 @@ set $alt Mod1
 exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
 
 # Program shortcuts
-bindsym $mod+Shift+Return exec $terminal vifm
+bindsym $mod+Shift+Return exec $terminal -e vifm
 bindsym $mod+Ctrl+Return exec http_proxy=localhost:8118 vimb --socket
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+f exec --no-startup-id touchscreen_toggle
-bindsym $mod+q exec $terminal wcalc
+bindsym $mod+q exec $terminal -e wcalc
 
 # Shutdown, reboot, lockscreen
 set $Locker i3lock -c 000000 -p default && sleep 1
@@ -245,9 +245,9 @@ bindsym $alt+e exec --no-startup-id "setxkbmap us", mode "$mode_qwertz"
 mode "$mode_qwertz" {
     bindsym $alt+n exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap", mode "default"
 
-    bindsym $mod+Shift+Return exec $terminal vifm
+    bindsym $mod+Shift+Return exec $terminal -e vifm
     bindsym $mod+b exec --no-startup-id firefox
-    bindsym $mod+p exec $terminal wcalc
+    bindsym $mod+p exec $terminal -e wcalc
 
     # Shutdown, reboot, lockscreen
     bindsym $mod+q mode "$mode_system_qwertz"
