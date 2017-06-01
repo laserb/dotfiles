@@ -103,8 +103,6 @@ endfunction
 
 autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd BufWritePre * call Format()
-autocmd FileType markdown let b:noStripWhitespace=1
-autocmd FileType vimwiki let b:noStripWhitespace=1
 
 " copy to clipboard
 set clipboard=unnamed
