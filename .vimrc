@@ -86,7 +86,7 @@ endfunction
 
 " remove trailing whitespaces
 fun! StripTrailingWhitespace()
-    " Only strip if the b:noStripeWhitespace variable isn't set
+    " Only strip if the b:noStripWhitespace variable isn't set
     if exists('b:noStripWhitespace')
         return
     endif
@@ -95,8 +95,8 @@ endfun
 
 " Re-format the whole buffer.
 function! Format()
-    " Only strip if the b:autoformat variable is set
-    if exists('b:autoformat')
+    " Only strip if the b:autoformat is 1
+    if exists('b:autoformat') && b:autoformat == 1
         call Preserve('normal gggqG')
     endif
 endfunction
