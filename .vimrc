@@ -42,6 +42,8 @@ Plugin 'laserb/vim-instant-markdown'
 Plugin 'laserb/instant-markdown-d'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()
 
