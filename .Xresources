@@ -9,21 +9,18 @@ xterm*font: 7x13
 xterm*pointerMode: 0
 XTerm*selectToClipboard: true
 XTerm*metaSendsEscape: true
-!urxvt extensions
+!URxvt extensions
 URxvt.perl-ext-common: keyboard-select, clipboard, url-select
 URxvt.keysym.M-v: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.clipboard.autocopy: true
-!urxvt settings
+!URxvt settings
 URxvt.font: xft:DejaVu Sans Mono:size=11:antialias=true
 URxvt.letterSpace: -1
-URxvt.foreground: white
-URxvt.background: black
 URxvt.scrollBar: false
-URxvt.color12: rgb:5c/5c/ff
 URxvt.saveLines: 10000
-!fix control and alt keys in vim with urxvt
+!fix control and alt keys in vim with URxvt
 URxvt.keysym.Control-Up:   \033[1;5A
 URxvt.keysym.Control-Down:    \033[1;5B
 URxvt.keysym.Control-Left:    \033[1;5D
@@ -32,3 +29,30 @@ URxvt.keysym.M-Down:        \033[1;3B
 URxvt.keysym.M-Up:          \033[1;3A
 URxvt.keysym.M-Left:        \033[1;3D
 URxvt.keysym.M-Right:       \033[1;3C
+! Jellybeans Terminal Colours
+URxvt.background: #121212
+URxvt.foreground: #d7d7d7
+! black
+URxvt.color0: #393939
+URxvt.color8: #535551
+! red
+URxvt.color1: #ca674a
+URxvt.color9: #ea2828
+! green
+URxvt.color2: #96a967
+URxvt.color10: #87aa32
+! yellow
+URxvt.color3: #d3a94a
+URxvt.color11: #f7e44d
+! blue
+URxvt.color4: #5778c1
+URxvt.color12: #6f9bca
+! magenta
+URxvt.color5: #9c35ac
+URxvt.color13: #a97ca4
+! cyan
+URxvt.color6: #6eb5f3
+URxvt.color14: #32dddd
+! white
+URxvt.color7: #a9a9a9
+URxvt.color15: #e9e9e7
