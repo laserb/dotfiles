@@ -44,6 +44,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
+Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 
@@ -128,7 +129,7 @@ endif
 set tags=./tags,tags;$HOME
 
 set number
-color torte
+color jellybeans
 set background=dark
 
 " nerdtree
