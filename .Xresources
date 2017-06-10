@@ -10,7 +10,7 @@ xterm*pointerMode: 0
 XTerm*selectToClipboard: true
 XTerm*metaSendsEscape: true
 !URxvt extensions
-URxvt.perl-ext-common: keyboard-select, clipboard, url-select
+URxvt.perl-ext-common: keyboard-select,clipboard,url-select,resize-font
 URxvt.keysym.M-v: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.keysym.M-u: perl:url-select:select_next
@@ -29,6 +29,11 @@ URxvt.keysym.M-Down:        \033[1;3B
 URxvt.keysym.M-Up:          \033[1;3A
 URxvt.keysym.M-Left:        \033[1;3D
 URxvt.keysym.M-Right:       \033[1;3C
+! resize font bindings
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:bigger
+URxvt.keysym.C-equal:     resize-font:reset
+URxvt.keysym.C-question:  resize-font:show
 ! Jellybeans Terminal Colours
 URxvt.background: #121212
 URxvt.foreground: #d7d7d7
