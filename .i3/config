@@ -27,6 +27,7 @@ set $WS10 10:git
 
 # Automove windows
 assign [class="Firefox"] $WS1
+assign [class="Franz"] $WS9
 
 set $mod Mod4
 set $alt Mod1
@@ -235,7 +236,7 @@ for_window [title="(?i)VIFM$"] title_format "<b><span background='#824007'>%titl
 exec --no-startup-id feh -T none --bg-scale ~/ownCloud/Arch-Linux/Wallpaper/wallpaper.png
 
 # Autostart
-exec "$HOME/.i3/auto-start-for-i3"
+exec dex -a -s ~/.config/autostart/common:~/.config/autostart
 
 
 ################################# QWERTZ CONFIGURATION #######################################

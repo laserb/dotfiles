@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=/usr/bin/xbindkeys
+Name=xbindkeys
+Comment=a grabbing keys program for X
+Type=Application
