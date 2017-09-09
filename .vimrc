@@ -197,6 +197,12 @@ let g:instant_markdown_port = 8890
 autocmd FileType markdown nnoremap <F9> :silent InstantMarkdownPreview<CR>
 let g:instant_markdown_browser = 'electron'
 
+" instant reStructured Text
+let g:instant_rst_browser = 'electron'
+autocmd FileType rst nnoremap <F9> :silent InstantRst<CR>
+autocmd FileType rst let g:table_mode_corner_corner='+'
+autocmd FileType rst let g:table_mode_header_fillchar='='
+
 " vimwiki
 let g:vimwiki_list = [{
             \ 'path': '~/vimwiki/',
