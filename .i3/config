@@ -11,6 +11,7 @@
 
 set $terminal urxvt
 set $dmenu j4-dmenu-desktop --display-binary
+set $browser chromium --proxy-server="localhost:8118"
 
 # workspaces
 workspace_auto_back_and_forth yes
@@ -27,6 +28,7 @@ set $WS10 10:git
 
 # Automove windows
 assign [class="Firefox"] $WS1
+assign [class="Chromium"] $WS1
 assign [class="Franz"] $WS9
 
 set $mod Mod4
@@ -38,7 +40,7 @@ exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
 # Program shortcuts
 bindsym $mod+Shift+Return exec $terminal -e vifm
 bindsym $mod+Ctrl+Return exec http_proxy=localhost:8118 vimb --socket
-bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+b exec --no-startup-id $browser
 bindsym $mod+f exec --no-startup-id touchscreen_toggle
 bindsym $mod+q exec $terminal -e wcalc
 
@@ -226,6 +228,7 @@ client.urgent #2f343a #900000 #ffffff #900000
 
 for_window [class=".*"] title_format "<b>%title</b>"
 for_window [class="(?i)firefox"] title_format "<b><span background='#8001C0'>FIREFOX</span></b>"
+for_window [class="(?i)chromium"] title_format "<b><span background='#8001C0'>CHROMIUM</span></b>"
 for_window [class="(?i)eclipse"] title_format "<b><span background='red'>ECLIPSE</span></b>"
 for_window [class="(?i)vimb"] title_format "<b><span background='#006500'>%title</span></b>"
 for_window [class="(?i)pcmanfm"] title_format "<b><span background='#00bfff'>%title</span></b>"
@@ -247,7 +250,7 @@ mode "$mode_qwertz" {
     bindsym $alt+n exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap", mode "default"
 
     bindsym $mod+Shift+Return exec $terminal -e vifm
-    bindsym $mod+b exec --no-startup-id firefox
+    bindsym $mod+b exec --no-startup-id $browser
     bindsym $mod+p exec $terminal -e wcalc
 
     # Shutdown, reboot, lockscreen
