@@ -45,6 +45,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'tell-k/vim-autopep8'
 
 call vundle#end()
 
@@ -177,7 +178,7 @@ let g:syntastic_auto_jump = 0
 let g:syntastic_aggregate_errors = 1
 
 let g:syntastic_java_javac_classpath = "bin:lib:.:lib/*:*:/usr/share/java/*"
-let g:syntastic_python_checkers = ["pylint"]
+let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_python_pylint_post_args="--max-line-length=100"
 
 " mark white spaces
