@@ -29,6 +29,9 @@ URxvt.keysym.M-Down:        \033[1;3B
 URxvt.keysym.M-Up:          \033[1;3A
 URxvt.keysym.M-Left:        \033[1;3D
 URxvt.keysym.M-Right:       \033[1;3C
+!disable default ctrl+shift keybinding
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 ! resize font bindings
 URxvt.keysym.C-minus:     resize-font:smaller
 URxvt.keysym.C-plus:      resize-font:bigger
