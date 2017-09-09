@@ -146,7 +146,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " highlight long lines
 let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(100,999),",")
-highlight ColorColumn guibg=#2d2d2d ctermbg=234
+highlight ColorColumn guibg=#3a3a3a ctermbg=237
 
 " do not conceal in latex
 let g:tex_conceal=""
@@ -185,7 +185,7 @@ let g:syntastic_python_pylint_post_args="--max-line-length=100"
 
 " mark white spaces
 set list lcs=tab:\┆\
-let g:indentLine_color_term = 236
+let g:indentLine_color_term = 237
 let g:indentLine_char = '┆'
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_leadingSpaceEnabled = 1
