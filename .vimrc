@@ -64,6 +64,10 @@ set softtabstop=4
 set expandtab
 set autowrite
 
+" disable folding
+set nofoldenable
+let g:riv_fold_auto_update = 0
+
 " Restore cursor position, window position, and last search after running a
 " command.
 function! Preserve(command)
