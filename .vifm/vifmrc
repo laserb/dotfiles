@@ -132,7 +132,7 @@ command! unzip !unzip %f
 command! run !! ./%f
 command! make !!make %a
 command! mkcd :mkdir %a | cd %a
-command! vim !xterm -e vim %f &
+command! vim !urxvt -e vim %f &
 command! fehfast !feh -T fast %f &
 command! feh !feh %f &
 command! vgrep vim "+grep %a"
@@ -411,7 +411,7 @@ nnoremap cc cw<c-u>
 nnoremap A cw<c-w>
 
 " Open console in current directory
-nnoremap ,t :!xterm &<cr>
+nnoremap ,t :!urxvt &<cr>
 
 " Open vim to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | execute ':!vim $MYVIFMRC' | restart<cr>
