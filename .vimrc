@@ -48,6 +48,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'matthew-brett/vim-rst-sections'
+Plugin 'nvie/vim-rst-tables'
 
 call vundle#end()
 
