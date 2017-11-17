@@ -201,10 +201,10 @@ let g:indentLine_leadingSpaceChar = '·'
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_port = 8890
 autocmd FileType markdown nnoremap <F9> :silent InstantMarkdownPreview<CR>
-let g:instant_markdown_browser = 'electron'
+let g:instant_markdown_browser = 'chromium'
 
 " instant reStructured Text
-let g:instant_rst_browser = 'electron'
+let g:instant_rst_browser = 'chromium'
 autocmd FileType rst nnoremap <F9> :silent InstantRst<CR>
 autocmd FileType rst let g:table_mode_corner_corner='+'
 autocmd FileType rst let g:table_mode_header_fillchar='='
