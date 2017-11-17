@@ -5,8 +5,9 @@ export EDITOR=vim
 export VISUAL=vim
 
 # ask once for the ssh key
-ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-ssh-add -l >/dev/null && alias git='LANG=en git' || alias git='ssh-add -l >/dev/null || ssh-add && alias git="LANG=en git"; git'
+ssh-add -l > /dev/null || alias ssh='ssh-add -l > /dev/null || ssh-add && unalias ssh; ssh'
+ssh-add -l > /dev/null && alias git='LANG=en git'
+ssh-add -l > /dev/null || alias git='ssh-add -l > /dev/null || ssh-add && alias git="LANG=en git"; LANG=en git'
 
 export LS_OPTIONS='--color=yes'
 #if [ "$TERM" == "xterm" ]; then
@@ -19,7 +20,7 @@ HISTSIZE=2000
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
-    eval "`dircolors -b`"
+    eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='ls --color=auto --format=vertical'
     #alias vdir='ls --color=auto --format=long'
@@ -64,6 +65,7 @@ alias junit='java -cp ${CLASSPATH} org.junit.runner.JUnitCore'
 alias logins='cat /var/log/auth.log | grep "user rf"'
 
 #most used commands
+# shellcheck disable=SC2142
 alias most='history | awk '\''{print $2}'\'' | awk '\''BEGIN{FS="|"}{print $1}'\'' | sort | uniq -c | sort -n | tail -n 20 | sort -nr'
 
 #vim confusion
@@ -87,11 +89,11 @@ function mkdo
     else
         dest=$2
     fi
-    if [ -d $dest ]; then
+    if [ -d "$dest" ]; then
         $command "$*"
     else
-        if [ ! -e $dest ]; then
-            mkdir -p $dest;
+        if [ ! -e "$dest" ]; then
+            mkdir -p "$dest";
             $command "$*"
         fi
     fi
@@ -133,23 +135,23 @@ function unbakm
 # Set xterm title
 function auto_title
 {
-    if [ -v $MYTITLE ]
+    if [ -z "$MYTITLE" ]
     then
         repo_name=$(git rev-parse --show-toplevel 2>> /dev/null)
-        if [ -v ${repo_name} ]
+        if [ -z "${repo_name}" ]
         then
             pwd
         else
             replace="s#${repo_name}/##g"
-            if [ "$(pwd)" = $repo_name ]
+            if [ "$(pwd)" = "$repo_name" ]
             then
-                echo $(basename $repo_name)
+                basename "$repo_name"
             else
-                echo $(basename $repo_name) $(pwd | sed $replace)
+                echo "$(basename "$repo_name")" "$(pwd | sed "$replace")"
             fi
         fi
     else
-        echo $MYTITLE
+        $MYTITLE
     fi
 }
 
@@ -166,25 +168,25 @@ alias preload_files='sudo less /var/lib/preload/preload.state'
 #PDF verkleinern
 function pdfsmall
 {
-	command gs -sDEVICE=pdfwrite -sOutputFile=$2 -dBATCH -dNOPAUSE -dPDFSETTINGS=/ebook $1
+    command gs -sDEVICE=pdfwrite -sOutputFile="$2" -dBATCH -dNOPAUSE -dPDFSETTINGS=/ebook "$1"
 }
 
 #PDF deskew
 function pdfdeskew
 {
-	command convert -quality 50 -density 300 +deskew $1 -compress jpeg $2
+    command convert -quality 50 -density 300 +deskew "$1" -compress jpeg "$2"
 }
 
 #Startup Check Counter
 #counter "dev"
 function counter
 {
-	command sudo dumpe2fs -h $1 | grep -i "mount count"
+    command sudo dumpe2fs -h "$1" | grep -i "mount count"
 }
 #counter_set "dev" "number"
 function counter_set
 {
-	command sudo tune2fs -C $2 $1
+    command sudo tune2fs -C "$2" "$1"
 }
 
 #Notify when a job has finished
@@ -195,7 +197,7 @@ alias alert='notify-send -i /usr/share/icons/gnome/32x32/apps/gnome-terminal.png
 function up {
 [ "${1/[^0-9]/}" == "$1" ] && {
         local ups=""
-        for i in $(seq 1 $1)
+        for _ in $(seq 1 "$1")
         do
                 ups=$ups"../"
         done
@@ -203,20 +205,7 @@ function up {
         } || echo "usage: up INTEGER"
 }
 
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
-
-
 # remove orhpaned packages
 orphans() {
-  if [[ ! -n $(pacman -Qdt) ]]; then
-    echo "No orphans to remove."
-  else
-    sudo pacman -Rs $(pacman -Qdtq)
-  fi
+    pacman -Qdtq
 }
