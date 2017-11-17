@@ -97,6 +97,39 @@ function mkdo
     fi
 }
 
+# backup file
+function bak
+{
+    cp -r "$1" "$1.bak"
+}
+
+function bakm
+{
+    mv "$1" "$1.bak"
+}
+
+function unbak
+{
+    bakfile=$1
+    ext=${bakfile##*.}
+    filepath=${bakfile%.*}
+    if [ "bak" == "${ext}" ]
+    then
+        cp -r "$bakfile" "$filepath"
+    fi
+}
+
+function unbakm
+{
+    bakfile=$1
+    ext=${bakfile##*.}
+    filepath=${bakfile%.*}
+    if [ "bak" == "${ext}" ]
+    then
+        mv "$bakfile" "$filepath"
+    fi
+}
+
 # Set xterm title
 function auto_title
 {
