@@ -50,6 +50,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'matthew-brett/vim-rst-sections'
 Plugin 'nvie/vim-rst-tables'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
@@ -208,6 +209,9 @@ let g:instant_rst_browser = 'chromium'
 autocmd FileType rst nnoremap <F9> :silent InstantRst<CR>
 autocmd FileType rst let g:table_mode_corner_corner='+'
 autocmd FileType rst let g:table_mode_header_fillchar='='
+
+" python jedi
+let g:jedi#popup_on_dot = 0
 
 " vimwiki
 let g:vimwiki_list = [{
