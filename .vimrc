@@ -269,6 +269,9 @@ let g:slime_python_ipython = 1
 let g:ConqueTerm_Color = 2         " 1: strip color after 200 lines, 2: always with color
 let g:ConqueTerm_CloseOnEnd = 1    " close conque when program ends running
 let g:ConqueTerm_StartMessages = 0 " display warning messages if conqueTerm is configured incorrectly
+nnoremap <silent> <Leader>Y :ConqueGdbCommand y<CR>
+nnoremap <silent> <Leader>N :ConqueGdbCommand n<CR>
+nnoremap <silent> <Leader>k :ConqueGdbCommand k<CR>
 
 " open new terminal at current position
 nnoremap ,t :silent :!xterm &<CR>
