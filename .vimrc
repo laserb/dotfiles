@@ -213,6 +213,9 @@ autocmd FileType rst nnoremap <F9> :silent InstantRst<CR>
 autocmd FileType rst let g:table_mode_corner_corner='+'
 autocmd FileType rst let g:table_mode_header_fillchar='='
 
+" vim-clang
+let g:clang_diagsopt = 'topleft:6'
+
 " python jedi
 let g:jedi#popup_on_dot = 0
 
