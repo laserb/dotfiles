@@ -40,9 +40,8 @@ Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
 Plugin 'Rykka/riv.vim'
 Plugin 'Rykka/InstantRst'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'euclio/vim-markdown-composer'
+Plugin 'vifm/neovim-vifm'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'nanotech/jellybeans.vim'
@@ -145,14 +144,6 @@ set background=dark
 
 " todo.txt
 let g:todo_root = "~/ownCloud/Android/Todo"
-
-" nerdtree
-" open if no file is specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" close vim if only nerdtree is left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nnoremap <C-n> :NERDTreeToggle<CR>
 
 " highlight long lines
 let &colorcolumn=join(range(81,999),",")
