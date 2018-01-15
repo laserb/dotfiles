@@ -27,8 +27,6 @@ set $WS9 9:mail
 set $WS10 10:git
 
 # Automove windows
-assign [class="Firefox"] $WS1
-assign [class="Chromium"] $WS1
 assign [class="Franz"] $WS9
 
 set $mod Mod4
