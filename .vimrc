@@ -194,6 +194,9 @@ let g:syntastic_java_javac_classpath = "bin:lib:.:lib/*:*:/usr/share/java/*"
 let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_python_pylint_post_args="--max-line-length=100"
 
+" shellcheck
+let g:syntastic_sh_shellcheck_args = "-x"
+
 " mark white spaces
 set list lcs=tab:\┆\
 let g:indentLine_color_term = 237
