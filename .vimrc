@@ -198,7 +198,8 @@ let g:syntastic_python_pylint_post_args="--max-line-length=100"
 let g:syntastic_sh_shellcheck_args = "-x"
 
 " mark white spaces
-set list lcs=tab:\┆\
+set list!
+set lcs=tab:\┆\
 let g:indentLine_color_term = 237
 let g:indentLine_char = '┆'
 let g:indentLine_showFirstIndentLevel = 1
