@@ -50,6 +50,8 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'matthew-brett/vim-rst-sections'
 Plugin 'nvie/vim-rst-tables'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'elentok/todo.vim'
+Plugin 'freitass/todo.txt-vim'
 
 call vundle#end()
 
@@ -140,6 +142,9 @@ set tags=./tags,tags;$HOME
 set number
 color jellybeans
 set background=dark
+
+" todo.txt
+let g:todo_root = "~/ownCloud/Android/Todo"
 
 " nerdtree
 " open if no file is specified
