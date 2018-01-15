@@ -48,6 +48,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'matthew-brett/vim-rst-sections'
 Plugin 'nvie/vim-rst-tables'
+Plugin 'udalov/kotlin-vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'elentok/todo.vim'
 Plugin 'freitass/todo.txt-vim'
@@ -181,7 +182,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 0
 let g:syntastic_aggregate_errors = 1
 
-let g:syntastic_java_javac_classpath = "bin:lib:.:lib/*:*:/usr/share/java/*"
+let g:syntastic_kotlin_kotlinc_classpath = "bin:build/libs/*:lib:.:lib/*:*:/usr/share/java/*:build/classes/kotlin/main"
+
+let g:syntastic_java_javac_classpath = "bin:build/libs/*:lib:.:lib/*:*:/usr/share/java/*"
 let g:syntastic_python_checkers = ["flake8"]
 let g:syntastic_python_pylint_post_args="--max-line-length=100"
 
