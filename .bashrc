@@ -8,7 +8,7 @@
 export PATH="/usr/lib/ccache/bin/:$PATH"
 
 #PS1='[\u@\h \W]\$ '
-PS1='\u:\W\$ '
+#PS1='\u:\W\$ '
 
 
 # autocomplete for sudo and man
@@ -24,5 +24,7 @@ export HISTCONTROL=ignoredups
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    source ~/.bash_aliases
 fi
+
+PS1="\[\033]0;\$(auto_title)\007\]$PS1"
