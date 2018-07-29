@@ -1,5 +1,8 @@
 # custom bash settings
 
+# disable bell
+xset b off
+
 # use vim as editor
 export EDITOR=vim
 export VISUAL=vim
