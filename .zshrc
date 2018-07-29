@@ -45,6 +45,9 @@ setopt APPEND_HISTORY
 unsetopt share_history
 unsetopt INC_APPEND_HISTORY
 
+# do not print an error if some globbing has no matches
+setopt NO_NOMATCH
+
 if [ -e $HOME/.shell_common ]
 then
     source $HOME/.shell_common
