@@ -124,6 +124,12 @@ Plugin 'udalov/kotlin-vim'
 " rust {{{3
 Plugin 'rust-lang/rust.vim'
 "}}}3
+" lua {{{3
+let g:syntastic_lua_checkers = ['luac', 'luacheck']
+" }}}3
+    " {{{3 vue.js
+        Plugin 'posva/vim-vue'
+    " }}}3
 " }}}2
 
 " Style Support {{{2
