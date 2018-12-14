@@ -1,10 +1,8 @@
 set nocompatible               " be iMproved
 scriptencoding utf-8
 set encoding=utf-8
-filetype off                   " required!
+"filetype on                   " required!
 
-syntax on
-filetype plugin indent on
 " use files in ~/.vim/after/ftplugin to add
 " file type specific settings
 
@@ -467,3 +465,5 @@ if !exists("my_auto_commands_loaded")
 " }}}3
 " }}}2
 " }}}1
+syntax on
+filetype plugin indent on
