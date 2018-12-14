@@ -34,6 +34,7 @@ set $alt Mod1
 
 # Keyboard layouts
 exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap"
+exec --no-startup-id "lxqt-policykit-agent &"
 
 # Program shortcuts
 bindsym $mod+Shift+Return exec $terminal -e vifm
