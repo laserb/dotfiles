@@ -465,5 +465,9 @@ if !exists("my_auto_commands_loaded")
 " }}}3
 " }}}2
 " }}}1
+
+"{{{1 Terminal
+tnoremap <Esc><Esc> <C-\><C-n>
+"}}}
 syntax on
 filetype plugin indent on
