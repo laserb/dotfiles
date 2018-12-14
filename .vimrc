@@ -12,6 +12,10 @@ set autowrite
 " set nofoldenable
 set foldmethod=marker
 
+" filename completion similar to shell
+set wildmenu
+set wildmode=longest,list
+
 " clipboards {{{1
 " copy to clipboard
 set clipboard=unnamed
