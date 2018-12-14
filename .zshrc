@@ -10,6 +10,7 @@ if ! zgen saved; then
 
     # Plugins from the default repo (robbyrussell's oh-my-zsh).
     zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/git-prompt
     zgen oh-my-zsh plugins/docker
     zgen oh-my-zsh plugins/vi-mode
     zgen oh-my-zsh plugins/lein
@@ -94,8 +95,31 @@ mquote () {
 }
 zle -N mquote && bindkey '^q' mquote
 
+## any suspended jobs?
+suspended_jobs () {
+    a="result={}; for i in string.gmatch('"$(jobs -s | tr '\n' '$' )"', '.-(%S-)%$') do table.insert(result, i) end; print(table.concat(result, '|'))"
+    jobs=$(lua -e $a)
+    if [ ! -z ${jobs} ]
+    then
+        echo "[${jobs}]"
+    fi
+}
+
 ## don't warn me about bg processes when exiting
 setopt nocheckjobs
 
 ## alert me if something failed
 setopt printexitvalue
+
+# vi-mode
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%}[% CMD]% %{$reset_color%}"
+    JOB_PROMPT="%{$fg_bold[blue]%}$(suspended_jobs)%{$reset_color%}"
+    PS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}%~%b$(git_super_status) %# "
+    RPS1="$JOB_PROMPT$EPS1"
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+export KEYTIMEOUT=1
