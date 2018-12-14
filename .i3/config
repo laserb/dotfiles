@@ -26,6 +26,9 @@ set $WS8 8
 set $WS9 9:mail
 set $WS10 10:git
 
+# default layout
+workspace_layout tabbed
+
 # Automove windows
 assign [class="Franz"] $WS9
 
