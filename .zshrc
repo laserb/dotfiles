@@ -53,6 +53,10 @@ then
     source $HOME/.shell_common
 fi
 
+# only complete exact matches
+zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' matcher-list 'm:{a-z}={a-z}'
+
 # set custom titles
 DISABLE_AUTO_TITLE="true"
 function precmd {
