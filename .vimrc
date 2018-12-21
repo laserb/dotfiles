@@ -353,6 +353,10 @@ Plugin 'tpope/vim-surround'
 " vifm {{{3
 Plugin 'vifm/neovim-vifm'
 " }}}3
+" {{{3 ctags
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+" }}}3
 " }}}2
 
 " Other {{{2
