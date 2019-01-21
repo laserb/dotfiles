@@ -381,6 +381,9 @@ Plugin 'tpope/vim-repeat'
 " ctags {{{3
 set tags=./tags,tags;$HOME
 " }}}3
+" {{{3 fetch
+Plugin 'kopischke/vim-fetch'
+" }}}3
 " }}}2
 
 " Scripts {{{2
