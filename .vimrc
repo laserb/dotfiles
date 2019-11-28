@@ -236,6 +236,9 @@ endfunction
 " do not conceal in latex
 let g:tex_conceal=""
 " }}}3
+" {{{3 robotframework
+Plugin 'mfukar/robotframework-vim'
+" }}}3
 " }}}2
 
 " Compiling, Debuging, Executing {{{2
