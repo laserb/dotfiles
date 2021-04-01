@@ -1,0 +1,34 @@
+{
+    "git.addGBlameToVirtualText": false,
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.displayByAle": false,
+    "diagnostic.enableMessage": "never",
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.virtualTextPrefix": "COC> ",
+    "diagnostic-languageserver.mergeConfig": true,
+    "diagnostic-languageserver.debug": true,
+    "diagnostic-languageserver.trace.server": "verbose",
+    "diagnostic-languageserver.filetypes": {
+        "vim": "vint",
+        "email": "languagetool",
+        "markdown": [ "write-good", "markdownlint" ],
+        "sh": "shellcheck",
+        "python": ["flake8", "mypy"],
+        "dockerfile": "hadolint",
+        "yaml": "yamllint",
+        "cpp": "cpplint"
+    },
+    "languageserver": {
+      "terraform": {
+        "command": "terraform-lsp",
+        "filetypes": ["terraform"],
+        "initializationOptions": {}
+      },
+      "dockerfile": {
+        "command": "docker-langserver",
+        "filetypes": ["dockerfile"],
+        "args": ["--stdio"]
+      }
+    }
+}
