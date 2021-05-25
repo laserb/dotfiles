@@ -9,14 +9,24 @@ xterm*font: 7x13
 xterm*pointerMode: 0
 XTerm*selectToClipboard: true
 XTerm*metaSendsEscape: true
+!font
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgba
+*font: xft:DejaVu Sans Mono:size=12
+*boldFont: xft:DejaVu Sans Mono:size=12
 !URxvt extensions
 URxvt.perl-ext-common: keyboard-select,clipboard,url-select,resize-font
-URxvt.keysym.M-v: perl:keyboard-select:activate
+URxvt.keysym.Control-bracketleft: perl:keyboard-select:activate
 URxvt.keysym.M-s: perl:keyboard-select:search
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.clipboard.autocopy: true
+!URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.Control-bracketright: perl:clipboard:paste
 !URxvt settings
-URxvt.font: xft:DejaVu Sans Mono:size=11:antialias=true
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 URxvt.saveLines: 10000
