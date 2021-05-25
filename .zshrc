@@ -15,6 +15,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/vi-mode
     zgen oh-my-zsh plugins/lein
     zgen oh-my-zsh plugins/dirhistory
+    zgen oh-my-zsh plugins/virtualenv
 
     # completions
     zgen load zsh-users/zsh-completions src
@@ -115,7 +116,7 @@ setopt printexitvalue
 function zle-line-init zle-keymap-select {
     VIM_PROMPT="%{$fg_bold[yellow]%}[% CMD]% %{$reset_color%}"
     JOB_PROMPT="%{$fg_bold[blue]%}$(suspended_jobs)%{$reset_color%}"
-    PS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}%~%b$(git_super_status) %# "
+    PS1="$(virtualenv_prompt_info)${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}%~%b$(git_super_status) %# "
     RPS1="$JOB_PROMPT$EPS1"
     zle reset-prompt
 }
