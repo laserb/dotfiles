@@ -10,8 +10,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $terminal urxvt
-set $dmenu j4-dmenu-desktop --display-binary
-set $browser chromium --proxy-server="localhost:8118"
+set $dmenu i3-dmenu-desktop
+set $browser google-chrome-stable --proxy-server="localhost:8118" --use-gl=desktop
 
 # workspaces
 workspace_auto_back_and_forth yes
@@ -37,7 +37,6 @@ set $alt Mod1
 
 # Keyboard layouts
 exec --no-startup-id "setxkbmap -layout us -variant intl"
-bindsym $alt+n exec --no-startup-id "setxkbmap de neo; xmodmap ~/.Xmodmap", mode "default"
 exec --no-startup-id "lxqt-policykit-agent &"
 
 # Program shortcuts
@@ -46,6 +45,7 @@ bindsym $mod+Ctrl+Return exec vimb
 bindsym $mod+b exec --no-startup-id $browser
 bindsym $mod+p exec $terminal -e wcalc
 bindsym $mod+Return exec $terminal
+bindsym $alt+Home exec $terminal
 
 # Shutdown, reboot, lockscreen
 set $Locker i3lock -c 000000 -p default && sleep 1
@@ -78,7 +78,7 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle && killal
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 9
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -94,6 +94,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec $dmenu
+bindsym Menu exec $dmenu
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
