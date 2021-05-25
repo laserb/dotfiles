@@ -282,6 +282,7 @@ let g:coc_global_extensions = [
             \ 'coc-yaml',
             \ 'coc-sh'
             \ ]
+inoremap <silent><expr> <c-space> coc#refresh()
 " }}}1
 
 "{{{1 Terminal
