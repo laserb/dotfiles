@@ -283,6 +283,8 @@ let g:coc_global_extensions = [
             \ 'coc-sh'
             \ ]
 inoremap <silent><expr> <c-space> coc#refresh()
+nmap <silent> <c-j> :call CocAction('diagnosticNext')<cr>
+nmap <silent> <c-k> :call CocAction('diagnosticPrevious')<cr>
 " }}}1
 
 "{{{1 Terminal
