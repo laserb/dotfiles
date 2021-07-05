@@ -12,10 +12,12 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/git-prompt
     zgen oh-my-zsh plugins/docker
-    zgen oh-my-zsh plugins/vi-mode
     zgen oh-my-zsh plugins/lein
     zgen oh-my-zsh plugins/dirhistory
     zgen oh-my-zsh plugins/virtualenv
+
+    # vi-mode
+    zgen load jeffreytse/zsh-vi-mode
 
     # completions
     zgen load zsh-users/zsh-completions src
@@ -113,10 +115,28 @@ setopt nocheckjobs
 setopt printexitvalue
 
 # vi-mode
-function zle-line-init zle-keymap-select {
+ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+function zle-line-init zle-keymap-select zvm_after_select_vi_mode {
+  case $ZVM_MODE in
+    $ZVM_MODE_NORMAL)
+      ZVM_MODE_PROMPT="%{$fg_bold[yellow]%}CMD%{$reset_color%}"
+    ;;
+    $ZVM_MODE_INSERT)
+      ZVM_MODE_PROMPT="INS"
+    ;;
+    $ZVM_MODE_VISUAL)
+      ZVM_MODE_PROMPT="%{$fg_bold[green]%}VIS%{$reset_color%}"
+    ;;
+    $ZVM_MODE_VISUAL_LINE)
+      ZVM_MODE_PROMPT="%{$fg_bold[green]%}VIS%{$reset_color%}"
+    ;;
+    $ZVM_MODE_REPLACE)
+      ZVM_MODE_PROMPT="%{$fg_bold[red]%}REP%{$reset_color%}"
+    ;;
+  esac
     VIM_PROMPT="%{$fg_bold[yellow]%}[% CMD]% %{$reset_color%}"
     JOB_PROMPT="%{$fg_bold[blue]%}$(suspended_jobs)%{$reset_color%}"
-    PS1="$(virtualenv_prompt_info)${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}%~%b$(git_super_status) %# "
+    PS1="$(virtualenv_prompt_info)[${ZVM_MODE_PROMPT}]%~%b$(git_super_status) %# "
     RPS1="$JOB_PROMPT$EPS1"
     zle reset-prompt
 }
