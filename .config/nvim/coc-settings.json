@@ -4,7 +4,7 @@
     "diagnostic.displayByAle": false,
     "diagnostic.enableMessage": "never",
     "diagnostic.virtualText": true,
-    "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.virtualTextCurrentLineOnly": true,
     "diagnostic.virtualTextPrefix": "COC> ",
     "diagnostic-languageserver.mergeConfig": true,
     "diagnostic-languageserver.debug": true,
