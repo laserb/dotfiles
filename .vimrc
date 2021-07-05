@@ -280,7 +280,8 @@ let g:coc_global_extensions = [
             \ 'coc-git',
             \ 'coc-jedi',
             \ 'coc-yaml',
-            \ 'coc-sh'
+            \ 'coc-sh',
+            \ 'coc-go'
             \ ]
 inoremap <silent><expr> <c-space> coc#refresh()
 nmap <silent> <c-j> :call CocAction('diagnosticNext')<cr>
