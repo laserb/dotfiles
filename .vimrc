@@ -292,5 +292,6 @@ nmap <silent> <c-k> :call CocAction('diagnosticPrevious')<cr>
 tnoremap <Esc><Esc> <C-\><C-n>
 "}}}
 
+let g:python3_host_prog = '/usr/bin/python3'
 syntax on
 filetype plugin indent on
