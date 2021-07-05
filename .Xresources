@@ -16,8 +16,8 @@ Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgba
-*font: xft:DejaVu Sans Mono:size=12
-*boldFont: xft:DejaVu Sans Mono:size=12
+*font: xft:DejaVuSansMono:size=12
+*boldFont: xft:DejaVuSansMono:size=12
 !URxvt extensions
 URxvt.perl-ext-common: keyboard-select,clipboard,url-select,resize-font
 URxvt.keysym.Control-bracketleft: perl:keyboard-select:activate
