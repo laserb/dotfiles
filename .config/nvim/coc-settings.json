@@ -1,5 +1,6 @@
 {
     "git.addGBlameToVirtualText": false,
+    "suggest.autoTrigger": "none",
     "diagnostic.checkCurrentLine": true,
     "diagnostic.displayByAle": false,
     "diagnostic.enableMessage": "never",
