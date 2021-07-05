@@ -15,6 +15,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/lein
     zgen oh-my-zsh plugins/dirhistory
     zgen oh-my-zsh plugins/virtualenv
+    zgen oh-my-zsh plugins/kubectl
 
     # vi-mode
     zgen load jeffreytse/zsh-vi-mode
