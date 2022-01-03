@@ -195,6 +195,11 @@ Plugin 'tpope/vim-surround'
 " vifm {{{3
 Plugin 'vifm/neovim-vifm'
 " }}}3
+" Context {{{3
+Plugin 'wellle/context.vim'
+let g:context_enabled = 1
+let g:context_nvim_no_redraw = 1
+" }}}3
 " }}}2
 
 " Other {{{2
