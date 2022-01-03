@@ -206,3 +206,8 @@ function up {
 orphans() {
     pacman -Qdtq
 }
+
+if [ -e $HOME/.shell_local ]
+then
+    source $HOME/.shell_local
+fi
