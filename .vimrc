@@ -144,6 +144,8 @@ autocmd FileType rst let g:table_mode_header_fillchar='='
 " }}}3
 " markdown {{{3
 Plugin 'euclio/vim-markdown-composer'
+let g:markdown_composer_autostart = 0
+autocmd FileType markdown nnoremap <F9> :silent ComposerStart<CR>
 " }}}3
 " }}}2
 
