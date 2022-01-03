@@ -45,6 +45,7 @@ bindsym $mod+Ctrl+Return exec vimb
 bindsym $mod+b exec --no-startup-id $browser
 bindsym $mod+p exec $terminal -e wcalc
 bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+Return exec $terminal -cd "`xcwd`"
 bindsym $alt+Home exec $terminal
 
 # Shutdown, reboot, lockscreen
