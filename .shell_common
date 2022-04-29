@@ -43,6 +43,10 @@ alias grep='grep --colour'
 # git alias
 alias gitc='git log --graph --pretty=oneline --abbrev-commit --decorate'
 alias git-branch-clean='git branch --merged | grep -v "\*" | grep -v master | xargs -n 1 git branch -d'
+git_remote_open() {
+    git remote -v | awk '/origin.*push/ {print $2}' | sed 's#.*git@##g' | sed 's#:#/#g' | sed 's#^#https://#' | xargs xdg-open
+}
+alias gro=git_remote_open
 
 # Kill all running containers.
 alias dockerkillall='docker kill $(docker ps -q)'
