@@ -137,6 +137,14 @@ function unbakm
 # Set xterm title
 function auto_title
 {
+    if [ ! -z "$TITLE_FUNCTION" ]
+    then
+        MYTITLE=$(eval $TITLE_FUNCTION)
+        if [ "$MYTITLE" == "." ]
+        then
+            unset MYTITLE
+        fi
+    fi
     if [ -z "$MYTITLE" ]
     then
         repo_name=$(git rev-parse --show-toplevel 2>> /dev/null)
