@@ -11,6 +11,7 @@ if ! zgen saved; then
     # Plugins from the default repo (robbyrussell's oh-my-zsh).
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/git-prompt
+    zgen oh-my-zsh plugins/ssh-agent
     zgen oh-my-zsh plugins/docker
     zgen oh-my-zsh plugins/lein
     zgen oh-my-zsh plugins/dirhistory
