@@ -145,3 +145,5 @@ function zle-line-init zle-keymap-select zvm_after_select_vi_mode {
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
+
+eval "$(fnm env --use-on-cd)"

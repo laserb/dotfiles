@@ -6,6 +6,8 @@ export VISUAL=vim
 
 export TERM=xterm
 
+export PATH="$HOME/.fnm":$PATH
+
 alias oldvim=/usr/bin/vim
 alias vim=nvim
 
